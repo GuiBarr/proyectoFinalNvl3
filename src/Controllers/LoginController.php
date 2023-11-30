@@ -24,21 +24,6 @@ class LoginController
 
         if (count($usuario) === 1) {
 
-            // switch ($usuario[0]["rol_id"]) {
-            //     case '1':
-            //         echo "Eres admin";
-            //         break;
-            //     case '2':
-            //         echo "Eres maestro";
-            //         break;
-            //     case '3':
-            //         echo "Eres alumno";
-            //         break;
-                
-            //     default:
-            //         echo "No tienes rol asignado";
-            //         break;
-            // }
             session_start();
             $_SESSION["user"] = $usuario[0];
 

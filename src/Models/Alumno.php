@@ -32,13 +32,18 @@ class Alumno
         try {
             $nombre = $data["nombre"];
             $apellido = $data["apellido"];
-            $telefono = $data["telefono"];
+            $correo = $data["correo"];
+            $contrasena = $data["contrasena"];
+            $direccion = $data["direccion"];
+            $fecha_nacimiento = $data["fecha_nacimiento"];
+            $dni = $data["dni"];
+            $rol_id = $data["rol_id"];
 
-            $res = $this->db->query("insert into alumnos(nombre, apellido, telefono) values ('$nombre', '$apellido', '$telefono')");
+            $res = $this->db->query("insert into alumnos(nombre, apellido, correo, contrasena, direccion, fecha_nacimineto, dni, rol_id) values ('$nombre', '$apellido', '$correo', '$contrasena', '$direccion', '$fecha_nacimiento', '$dni', '$rol_id')");
 
             if ($res) {
                 $ultimoId = $this->db->insert_id;
-                $res = $this->db->query("select * from alumnos where id = $ultimoId");
+                $res = $this->db->query("select * from usuarios where id = $ultimoId");
                 $data = $res->fetch_assoc();
 
                 return $data;
@@ -52,6 +57,6 @@ class Alumno
 
     public function destroy($id)
     {
-        $this->db->query("delete from alumnos where id = $id");
+        $this->db->query("delete from usuarios where id = $id");
     }
 }

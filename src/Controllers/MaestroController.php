@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER["DOCUMENT_ROOT"] . "/src/Models/Maestro.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/src/models/maestro.php";
 
 class MaestroController
 {
@@ -16,7 +16,6 @@ class MaestroController
     public function index()
     {
         $maestros = $this->model->all();
-
         include $_SERVER["DOCUMENT_ROOT"] . "/src/views/maestros/read.php";
     }
 
